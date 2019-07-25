@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">RealityGame Task</string>
+    <string name="progress_bar_message">Loading…</string>
+    <string name="txt_lunchpad_name">LunchPad name</string>
+    <string name="txt_lunchpad_status">LunchPad Status</string>
+    <string name="txt_wiki">WikiPedia</string>
+    <string name="txt_location">Location name</string>
+    <string name="txt_detail">LunchPad List</string>
+    <string name="txt_site_id">Site Id</string>
+    <string name="txt_site_long_name">Site Name Long</string>
+    <string name="location">%1$s, %2$s</string>
+    <string name="view_map">
+        <u>VIEW MAP</u>
+    </string>
+
+    <string name="txt_rocket">Rocket List</string>
+    <string name="txt_rocket_name">Rocket name</string>
+    <string name="txt_rocket_country">Rocket Country</string>
+    <string name="txt_rocket_company">Rocket Company</string>
+    <string name="txt_lunch_vehicle">
+        <u>Lunched Vehicle</u>
+    </string>
+
+</resources>

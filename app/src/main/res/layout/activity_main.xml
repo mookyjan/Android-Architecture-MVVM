@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+>
+
+    <data>
+        <variable name="viewModel"
+                  type="com.mudassirkhan.realitygametask.ui.main.MainViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.main.MainActivity"
+            android:fitsSystemWindows="true"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+    >
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/txt_detail"
+                  android:id="@+id/txt_title"
+
+                  app:layout_constraintTop_toTopOf="parent"
+                  style="@style/BaseTextView.OpenSansBold"
+                  android:layout_marginTop="8dp" android:layout_marginEnd="8dp"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  android:layout_marginRight="8dp" android:layout_marginStart="8dp"
+                  app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"/>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/lunchpad_list_refresh"
+                android:layout_width="match_parent"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_20sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+                app:layout_constraintHorizontal_bias="1.0" app:layout_constraintTop_toBottomOf="@+id/txt_title"
+                android:layout_marginTop="8dp">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    tools:listitem="@layout/lunch_pad_item_row"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    app:layout_constrainedHeight="true"
+                    android:paddingBottom="?attr/actionBarSize"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+
+
+                    android:id="@+id/recyclerView"
+            />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

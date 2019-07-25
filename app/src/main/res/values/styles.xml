@@ -1,0 +1,76 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Typography -->
+    <style name="BaseTextView" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@color/textColorDark</item>
+    </style>
+
+    <style name="BaseTextView.OpenSansRegular">
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+        <item name="android:textSize">@dimen/_16sdp</item>
+    </style>
+
+    <style name="BaseTextView.OpenSansItalic">
+        <item name="android:fontFamily">@font/open_sans_italic</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+    </style>
+
+    <style name="BaseTextView.OpenSansBold">
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+    </style>
+
+    <style name="BaseTextView.OpenSansSemiBold">
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
+        <item name="android:textSize">@dimen/_16sdp</item>
+    </style>
+
+    <style name="BaseTextView.RalewayRegular">
+        <item name="android:fontFamily">@font/raleway_regular</item>
+        <item name="android:textSize">@dimen/_16sdp</item>
+    </style>
+
+    <style name="BaseTextView.RalewayBold">
+        <item name="android:fontFamily">@font/raleway_bold</item>
+        <item name="android:textSize">@dimen/_16sdp</item>
+    </style>
+
+
+    <style name="BaseTextView.RaleWayBody" parent="BaseTextView.RalewayRegular">
+        <item name="android:textColor">@color/grey_light_medium</item>
+        <item name="android:textSize">@dimen/_16sdp</item>
+    </style>
+
+    <style name="BaseTextView.OpenSansBody" parent="BaseTextView.OpenSansRegular">
+        <item name="android:textColor">@color/grey_light_medium</item>
+        <item name="android:textSize">@dimen/_16sdp</item>
+    </style>
+
+    <style name="ProgressD" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+</resources>
