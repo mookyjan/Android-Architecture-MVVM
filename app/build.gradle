@@ -5,15 +5,16 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
+
 android {
-    compileSdkVersion 28
+    compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion "29.0.0"
     defaultConfig {
         applicationId "com.mudassirkhan.realitygametask"
-        minSdkVersion 16
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -26,51 +27,56 @@ android {
     dataBinding {
         enabled = true
     }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
-    implementation "io.reactivex.rxjava2:rxkotlin:$rxkotlin_version"
-    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
-    implementation 'com.github.ajalt:timberkt:1.5.0'
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-scalars:$retrofit_version"
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
-    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0-alpha01"
-    implementation "androidx.cardview:cardview:1.0.0"
-    implementation "androidx.recyclerview:recyclerview:1.0.0"
+    implementation rootProject.ext.generalDependencies.kotlin_version
+    implementation rootProject.ext.generalDependencies.app_support
+    implementation rootProject.ext.generalDependencies.android_core
+    implementation rootProject.ext.generalDependencies.constraint_layout
+    implementation rootProject.ext.generalDependencies.material_design
+    implementation rootProject.ext.generalDependencies.lifecycle
 
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.core:core-ktx:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    //Rx
+    implementation rootProject.ext.generalDependencies.rx_kotlin
+    implementation rootProject.ext.generalDependencies.rx_android
+
+    //timber
+    implementation rootProject.ext.generalDependencies.timber
+
+    //sdp library for multiple layout
+    implementation rootProject.ext.generalDependencies.sdp
+
+    //Retrofit
+    implementation rootProject.ext.generalDependencies.rx_adapter
+    implementation rootProject.ext.generalDependencies.gson
+    implementation rootProject.ext.generalDependencies.interceptor
+
+    //glide
+    implementation rootProject.ext.generalDependencies.glide
+    kapt rootProject.ext.generalDependencies.glide_anno
 
     // room
-    implementation "androidx.room:room-runtime:2.1.0"
-    kapt "androidx.room:room-compiler:2.1.0"
-    implementation "androidx.room:room-rxjava2:2.1.0"
-    implementation "androidx.sqlite:sqlite:2.0.1"
-    androidTestImplementation 'androidx.room:room-testing:2.1.0'
+    implementation rootProject.ext.generalDependencies.room
+    kapt rootProject.ext.generalDependencies.room_compiler
+    implementation rootProject.ext.generalDependencies.room_rxjava2
+    implementation rootProject.ext.generalDependencies.room_sqlite
+    androidTestImplementation rootProject.ext.generalDependencies.room_test
 
-    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    //Dagger
+    implementation rootProject.ext.generalDependencies.dagger_version
+    kapt rootProject.ext.generalDependencies.dagger_compiler
+    implementation rootProject.ext.generalDependencies.dagger_android
+    implementation rootProject.ext.generalDependencies.dagger_support
+    kapt rootProject.ext.generalDependencies.dagger_anno
 
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
-
-    // dagger
-    implementation "com.google.dagger:dagger:$daggerVersion"
-    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
-    implementation "com.google.dagger:dagger-android:$daggerVersion"
-    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
-    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
-    implementation 'com.google.code.gson:gson:2.8.5'
-
-    implementation 'com.google.android.material:material:1.0.0'
-
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation rootProject.ext.generalDependencies.junit
+    androidTestImplementation rootProject.ext.generalDependencies.support_test_runner
+    androidTestImplementation rootProject.ext.generalDependencies.support_test_espresso
 }

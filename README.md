@@ -1,6 +1,7 @@
 
 ### Structure of the code ###
-this project is based on MVVM architecture pattern to get data from https://docs.spacexdata.com/
+this project is based on MVVM architecture pattern to get data from https://docs.spacexdata.com/ to show a list and onclick go
+to detail page.
 and the libraries used here are
 Retrofit,Rxjava2, Dagger2 and Glide and Android Architecture component.
 and for the simplicity of this project many things have been kept sample
